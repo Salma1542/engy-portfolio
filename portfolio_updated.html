@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Engy Ibrahim — Science Teacher | إنچي إبراهيم مدرّسة علوم</title>
+<meta name="description" content="Engy Ibrahim — bilingual Egyptian science teacher for primary & preparatory students. Learning through games & simple explanations." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#3d2c5f;          /* deep plum used for text */
+    --ink:#2b2350;           /* dark text */
+    --teal:#ff8fb1;          /* baby pink (primary accent) */
+    --cyan:#7ec8f2;           /* baby blue */
+    --yellow:#ffd84d;        /* sunny yellow */
+    --white:#ffffff;
+    --cream:#fff7ef;
+    --muted:#7a6f8a;
+    --card:rgba(255,255,255,0.75);
+    --border:rgba(61,44,95,0.12);
+    --shadow:0 20px 60px rgba(255,143,177,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins','Cairo',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  /* Language switching */
+  body.lang-en .ar-only{display:none !important}
+  body.lang-ar .en-only{display:none !important}
+  body.lang-ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right}
+  body.lang-ar .nav-wrap,
+  body.lang-ar .hero-grid,
+  body.lang-ar .about-grid,
+  body.lang-ar .contact-wrap{direction:rtl}
+  body.lang-ar .timeline{padding-left:0;padding-right:24px;border-left:0;border-right:2px dashed rgba(22,224,189,.35)}
+  body.lang-ar .tl-item::before{left:auto;right:-31px}
+  body.lang-ar .tl-item{padding-left:0;padding-right:18px}
+  body.lang-ar .c-item:hover{transform:translateX(-4px)}
+  body.lang-ar .wa-float{right:auto;left:24px}
+  body.lang-ar .lang-toggle{right:auto;left:24px}
+
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* Background */
+  .bg-decor{
+    position:fixed;inset:0;z-index:-1;overflow:hidden;
+    background:
+      radial-gradient(900px 600px at 10% -10%, rgba(255,143,177,.35), transparent 60%),
+      radial-gradient(800px 600px at 110% 10%, rgba(126,200,242,.35), transparent 60%),
+      radial-gradient(700px 500px at 50% 120%, rgba(255,216,77,.30), transparent 60%),
+      linear-gradient(180deg,#fff7ef 0%, #fdeef7 50%, #eaf6ff 100%);
+  }
+  .stars{position:absolute;inset:0}
+  .stars span{
+    position:absolute;width:3px;height:3px;background:var(--yellow);border-radius:50%;
+    opacity:.7;animation:twinkle 4s infinite ease-in-out;box-shadow:0 0 8px rgba(255,216,77,.7);
+  }
+  @keyframes twinkle{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.6)}}
+
+  .atom{
+    position:absolute;width:220px;height:220px;border-radius:50%;
+    border:1.5px dashed rgba(255,143,177,.45);
+    animation:spin 30s linear infinite;
+  }
+  .atom::before,.atom::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    border:1.5px dashed rgba(126,200,242,.5);
+    transform:rotate(60deg);
+  }
+  .atom::after{transform:rotate(120deg);border-color:rgba(255,216,77,.5)}
+  .atom.a1{top:8%;left:-60px}
+  .atom.a2{bottom:-80px;right:-60px;width:300px;height:300px;animation-duration:50s}
+  .atom.a3{top:55%;left:40%;width:140px;height:140px;opacity:.6}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Chemistry symbols */
+  .chem{
+    position:absolute;font-family:'Poppins',sans-serif;font-weight:700;
+    color:rgba(255,143,177,.45);
+    text-shadow:0 0 24px rgba(126,200,242,.25);
+    user-select:none;pointer-events:none;
+    animation:drift 18s ease-in-out infinite;white-space:nowrap;
+  }
+  .chem sub{font-size:.6em;vertical-align:-3px;margin:0 1px}
+  .chem sup{font-size:.6em;vertical-align:6px;margin:0 1px}
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) rotate(var(--r,0deg));opacity:var(--o,.35)}
+    50%{transform:translate(10px,-18px) rotate(calc(var(--r,0deg) + 4deg));opacity:calc(var(--o,.35) + .12)}
+  }
+  .hex{
+    position:absolute;width:90px;height:104px;
+    clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    animation:floatY 14s ease-in-out infinite;opacity:.7;
+  }
+  .hex::before{
+    content:"";position:absolute;inset:0;
+    clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    background:linear-gradient(135deg, rgba(255,143,177,.55), rgba(126,200,242,.55));
+  }
+  .hex::after{
+    content:"";position:absolute;inset:3px;
+    clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    background:var(--cream);
+  }
+  @keyframes floatY{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(8deg)}}
+
+  /* Navbar */
+  nav.top{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.75);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-wrap{
+    max-width:1200px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+  .logo .dot{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(135deg,var(--teal),var(--cyan));
+    display:grid;place-items:center;color:#fff;font-weight:900;
+    box-shadow:0 8px 20px rgba(255,143,177,.45);
+  }
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--ink)}
+  .nav-links a{opacity:.8;transition:.2s}
+  .nav-links a:hover{opacity:1;color:var(--teal)}
+  .nav-cta{
+    padding:9px 16px;border-radius:999px;
+    background:linear-gradient(135deg,var(--teal),var(--yellow));
+    color:var(--ink)!important;font-weight:700;
+  }
+  .lang-btn{
+    background:rgba(255,255,255,.7);border:1px solid var(--border);
+    color:var(--ink);padding:7px 14px;border-radius:999px;font-weight:700;
+    font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    transition:.2s;font-family:inherit;
+  }
+  .lang-btn:hover{border-color:var(--teal);color:var(--teal)}
+  .burger{display:none;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
+
+  section{padding:90px 24px;position:relative}
+  .container{max-width:1200px;margin:0 auto}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--teal);margin-bottom:14px;font-family:'Poppins',sans-serif;
+  }
+  body.lang-ar .eyebrow{letter-spacing:1px}
+  h1,h2,h3{font-weight:700;line-height:1.2;color:var(--ink)}
+  h2.section-title{font-size:clamp(28px,4vw,42px);margin-bottom:18px}
+
+  /* HERO */
+  .hero{padding-top:60px;padding-bottom:80px;min-height:88vh;display:flex;align-items:center}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:60px;align-items:center;width:100%}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;border-radius:999px;
+    background:rgba(255,216,77,.25);border:1px solid rgba(255,143,177,.45);
+    color:#c4407a;font-size:13px;font-weight:600;margin-bottom:18px;
+  }
+  .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(255,143,177,.7);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 12px rgba(255,143,177,0)}100%{box-shadow:0 0 0 0 rgba(255,143,177,0)}}
+
+  .hero h1{font-size:clamp(36px,5.4vw,62px);letter-spacing:-1px}
+  .hero h1 .grad{
+    background:linear-gradient(135deg,var(--teal),var(--cyan) 60%, var(--yellow));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .role{font-size:clamp(16px,1.6vw,20px);color:var(--muted);margin-top:14px}
+  .hero .tag{margin-top:22px;color:#5a4d70;max-width:560px;font-size:17px}
+  .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{
+    padding:14px 24px;border-radius:14px;font-weight:700;font-size:15px;
+    display:inline-flex;align-items:center;gap:10px;transition:.2s;cursor:pointer;border:0;font-family:inherit;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--teal),var(--yellow));color:var(--ink);box-shadow:0 12px 30px rgba(255,143,177,.45)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(255,143,177,.55)}
+  .btn-ghost{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  .hero-card{
+    position:relative;aspect-ratio:1/1.05;border-radius:28px;
+    background:linear-gradient(135deg,rgba(255,143,177,.35),rgba(126,200,242,.35));
+    border:1px solid var(--border);backdrop-filter:blur(12px);
+    overflow:hidden;box-shadow:var(--shadow);
+  }
+  .hero-card .photo{
+    position:absolute;inset:24px;border-radius:22px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,216,77,.55), transparent 60%),
+      linear-gradient(135deg,#ffd5e5,#cfeaff);
+    display:grid;place-items:center;color:#7a6f8a;text-align:center;padding:18px;
+    border:1px solid rgba(61,44,95,.12);
+  }
+  .hero-card .science-art{padding:10px}
+  .sa-atom-orbits{transform-box:fill-box;transform-origin:center;animation:saSpin 22s linear infinite}
+  .sa-electron{transform-box:fill-box;transform-origin:0 0;animation:saOrbit 6s linear infinite}
+  .sa-electron.e2{animation-duration:8s;animation-delay:-2s}
+  .sa-electron.e3{animation-duration:7s;animation-delay:-4s}
+  .sa-nucleus{transform-box:fill-box;transform-origin:center;animation:saPulse 2.4s ease-in-out infinite}
+  .sa-bubble{transform-box:fill-box;transform-origin:center;animation:saBubble 3.5s ease-in-out infinite}
+  .sa-bubble.b2{animation-delay:.6s;animation-duration:4s}
+  .sa-bubble.b3{animation-delay:1.2s;animation-duration:3s}
+  .sa-spark{transform-box:fill-box;transform-origin:center;animation:saSpark 2.8s ease-in-out infinite}
+  .sa-spark.s2{animation-delay:.9s}
+  .sa-spark.s3{animation-delay:1.7s}
+  @keyframes saSpin{to{transform:rotate(360deg)}}
+  @keyframes saOrbit{to{transform:rotate(-360deg)}}
+  @keyframes saPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+  @keyframes saBubble{0%{transform:translateY(0);opacity:.9}50%{transform:translateY(-10px);opacity:.4}100%{transform:translateY(0);opacity:.9}}
+  @keyframes saSpark{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.2)}}
+  @media (prefers-reduced-motion: reduce){
+    .sa-atom-orbits,.sa-electron,.sa-nucleus,.sa-bubble,.sa-spark{animation:none}
+  }
+  .hero-card .photo .ph-icon{font-size:54px;margin-bottom:10px}
+  .float-chip{
+    position:absolute;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border:1px solid var(--border);border-radius:14px;padding:10px 14px;
+    font-size:13px;display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;
+    box-shadow:0 10px 30px rgba(255,143,177,.25);animation:floaty 5s ease-in-out infinite;
+  }
+  .float-chip .ico{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--yellow));display:grid;place-items:center;color:var(--ink);font-weight:800}
+  .chip-1{top:18px;left:-22px;animation-delay:.2s}
+  .chip-2{bottom:30px;right:-22px;animation-delay:1.2s}
+  .chip-3{top:45%;right:-30px;animation-delay:.8s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  .grid{display:grid;gap:22px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:20px;padding:28px;backdrop-filter:blur(10px);
+    transition:.3s;box-shadow:0 8px 24px rgba(126,200,242,.18);
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,143,177,.6);box-shadow:0 20px 50px rgba(255,143,177,.25)}
+  .card .icon{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg,rgba(255,143,177,.35),rgba(126,200,242,.35));
+    border:1px solid rgba(255,143,177,.4);
+    display:grid;place-items:center;color:#c4407a;font-size:24px;margin-bottom:18px;
+  }
+  .card h3{font-size:20px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .about p{color:#5a4d70;margin-top:14px}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(126,200,242,.18)}
+  .stat b{display:block;font-size:28px;color:#c4407a}
+  .stat span{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  body.lang-ar .stat span{letter-spacing:.5px}
+  .about ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-top:14px}
+
+  /* Timeline */
+  .timeline{position:relative;margin-top:20px;padding-left:24px;border-left:2px dashed rgba(255,143,177,.5)}
+  .tl-item{position:relative;margin-bottom:28px;padding-left:18px}
+  .tl-item::before{
+    content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;
+    background:linear-gradient(135deg,var(--teal),var(--yellow));box-shadow:0 0 0 4px rgba(255,216,77,.3);
+  }
+  .tl-item h4{font-size:17px;color:var(--ink)}
+  .tl-item .when{color:#c4407a;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+  .tl-item p{color:var(--muted);font-size:14.5px;margin-top:4px}
+
+  .why-grid{grid-template-columns:repeat(4,1fr)}
+
+  /* Contact */
+  .contact-wrap{
+    background:linear-gradient(135deg,rgba(255,143,177,.25),rgba(126,200,242,.25),rgba(255,216,77,.2));
+    border:1px solid rgba(255,143,177,.35);
+    border-radius:28px;padding:50px;
+    display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+    box-shadow:0 20px 50px rgba(255,143,177,.18);
+  }
+  .contact-wrap h2{font-size:34px}
+  .contact-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+  .c-item{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.85);border:1px solid var(--border);padding:14px 18px;border-radius:14px;transition:.2s;color:var(--ink)}
+  .c-item:hover{border-color:var(--teal);transform:translateX(4px)}
+  .c-item .ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--yellow));display:grid;place-items:center;color:var(--ink);font-weight:800}
+  .c-item small{color:var(--muted);font-size:12px;display:block}
+  .c-item b{font-size:15px}
+  .socials{display:flex;gap:10px;margin-top:18px}
+  .socials a{
+    width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(255,255,255,.8);border:1px solid var(--border);transition:.2s;color:var(--ink);
+  }
+  .socials a:hover{background:linear-gradient(135deg,var(--teal),var(--yellow));color:var(--ink);transform:translateY(-3px)}
+
+  /* Floating language toggle (mobile FAB-like) */
+  .lang-toggle{
+    position:fixed;bottom:100px;right:24px;z-index:100;
+    background:#fff;backdrop-filter:blur(10px);
+    border:2px solid var(--teal);color:#c4407a;
+    padding:10px 16px;border-radius:999px;font-weight:800;font-size:13px;
+    cursor:pointer;box-shadow:0 10px 30px rgba(255,143,177,.4);
+    display:inline-flex;align-items:center;gap:8px;font-family:inherit;
+    transition:.2s;
+  }
+  .lang-toggle:hover{background:var(--teal);color:#fff}
+
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:100;
+    width:62px;height:62px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;color:#fff;
+    box-shadow:0 14px 40px rgba(37,211,102,.5);
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  .wa-float::before{
+    content:"";position:absolute;inset:-6px;border-radius:50%;
+    border:2px solid rgba(37,211,102,.4);animation:ring 2s infinite;
+  }
+  @keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.4);opacity:0}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .wa-float svg{width:32px;height:32px}
+
+  footer{padding:30px 24px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width: 920px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);flex-direction:column;padding:18px;border-bottom:1px solid var(--border)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-card{max-width:380px;margin:0 auto}
+    .about-grid{grid-template-columns:1fr}
+    .grid-3,.why-grid{grid-template-columns:1fr}
+    .contact-wrap{grid-template-columns:1fr;padding:32px}
+    section{padding:70px 20px}
+  }
+
+  /* QUIZ SECTION */
+  .quiz-wrap{max-width:780px;margin:0 auto}
+  .quiz-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;justify-content:center}
+  .qtab{
+    padding:8px 20px;border-radius:999px;border:1.5px solid var(--border);
+    background:rgba(255,255,255,.7);color:var(--muted);font-size:13px;font-weight:600;
+    cursor:pointer;transition:.2s;font-family:inherit;
+  }
+  .qtab.active,.qtab:hover{background:linear-gradient(135deg,var(--teal),var(--cyan));color:var(--ink);border-color:transparent;box-shadow:0 6px 18px rgba(255,143,177,.35)}
+  .quiz-card{
+    background:var(--card);border:1px solid var(--border);border-radius:24px;
+    padding:36px 40px;backdrop-filter:blur(12px);box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  .quiz-card::before{
+    content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;
+    background:radial-gradient(circle,rgba(255,216,77,.25),transparent 70%);border-radius:50%;
+  }
+  .quiz-progress-bar{height:6px;border-radius:999px;background:rgba(61,44,95,.1);margin-bottom:28px;overflow:hidden}
+  .quiz-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--cyan));transition:width .5s ease}
+  .quiz-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .quiz-num{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .quiz-score-badge{background:linear-gradient(135deg,rgba(255,143,177,.2),rgba(126,200,242,.2));border:1px solid rgba(255,143,177,.4);border-radius:999px;padding:4px 14px;font-size:13px;font-weight:700;color:#c4407a}
+  .quiz-q{font-size:clamp(16px,2.2vw,20px);font-weight:700;color:var(--ink);margin-bottom:24px;line-height:1.45}
+  .quiz-opts{display:flex;flex-direction:column;gap:12px}
+  .qopt{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:14px;
+    border:1.5px solid var(--border);background:rgba(255,255,255,.85);
+    cursor:pointer;transition:.2s;font-size:15px;color:var(--ink);font-family:inherit;width:100%;text-align:left;
+  }
+  body.lang-ar .qopt{text-align:right}
+  .qopt:hover:not(:disabled){border-color:var(--teal);background:rgba(255,143,177,.08);transform:translateX(4px)}
+  body.lang-ar .qopt:hover:not(:disabled){transform:translateX(-4px)}
+  .qopt:disabled{cursor:default}
+  .qopt.correct{border-color:#4caf8a;background:rgba(76,175,138,.12);color:#2a7a58}
+  .qopt.wrong{border-color:#e07070;background:rgba(224,112,112,.1);color:#b94040}
+  .qopt.reveal{border-color:#4caf8a;background:rgba(76,175,138,.07)}
+  .opt-letter{width:32px;height:32px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,rgba(255,143,177,.25),rgba(126,200,242,.25));border:1px solid rgba(255,143,177,.3);display:grid;place-items:center;font-weight:800;font-size:13px;color:#c4407a}
+  .qopt.correct .opt-letter{background:#4caf8a;color:#fff;border-color:#4caf8a}
+  .qopt.wrong .opt-letter{background:#e07070;color:#fff;border-color:#e07070}
+  .qopt.reveal .opt-letter{background:#4caf8a;color:#fff;border-color:#4caf8a}
+  .quiz-feedback{margin-top:18px;padding:14px 18px;border-radius:12px;font-size:14.5px;font-weight:600;display:none;align-items:center;gap:10px}
+  .quiz-feedback.show{display:flex}
+  .quiz-feedback.ok{background:rgba(76,175,138,.15);border:1px solid rgba(76,175,138,.4);color:#2a7a58}
+  .quiz-feedback.bad{background:rgba(224,112,112,.12);border:1px solid rgba(224,112,112,.35);color:#b94040}
+  .quiz-actions{display:flex;justify-content:flex-end;margin-top:24px}
+  .quiz-next{padding:12px 28px;border-radius:12px;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--teal),var(--yellow));color:var(--ink);border:0;cursor:pointer;font-family:inherit;transition:.2s;display:none;box-shadow:0 8px 24px rgba(255,143,177,.35)}
+  .quiz-next:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(255,143,177,.45)}
+  .quiz-result{text-align:center;padding:20px 0;display:none}
+  .quiz-result .big-emoji{font-size:64px;margin-bottom:16px;animation:floaty 3s ease-in-out infinite}
+  .quiz-result h3{font-size:28px;margin-bottom:10px}
+  .quiz-result p{color:var(--muted);font-size:16px;margin-bottom:24px}
+  .result-score{display:inline-block;padding:12px 32px;border-radius:20px;margin-bottom:24px;background:linear-gradient(135deg,rgba(255,143,177,.25),rgba(126,200,242,.25));border:1px solid rgba(255,143,177,.4);font-size:36px;font-weight:900;color:#c4407a}
+  .quiz-restart{padding:12px 28px;border-radius:12px;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--teal),var(--yellow));color:var(--ink);border:0;cursor:pointer;font-family:inherit;box-shadow:0 8px 24px rgba(255,143,177,.35);transition:.2s}
+  .quiz-restart:hover{transform:translateY(-2px)}
+
+</style>
+</head>
+<body class="lang-en">
+
+<div class="bg-decor">
+  <div class="stars" id="stars"></div>
+  <div class="atom a1"></div>
+  <div class="atom a2"></div>
+  <div class="atom a3"></div>
+  <div id="chemLayer"></div>
+</div>
+
+<nav class="top">
+  <div class="nav-wrap">
+    <div class="logo">
+      <div class="dot">⚛</div>
+      <span class="en-only">Engy Ibrahim</span>
+      <span class="ar-only">إنچي إبراهيم</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about"><span class="en-only">About</span><span class="ar-only">عني</span></a>
+      <a href="#services"><span class="en-only">Services</span><span class="ar-only">الخدمات</span></a>
+      <a href="#experience"><span class="en-only">Experience</span><span class="ar-only">الخبرة</span></a>
+      <a href="#why"><span class="en-only">Why Me</span><span class="ar-only">لماذا أنا</span></a>
+      <a href="#quiz"><span class="en-only">Try a Quiz</span><span class="ar-only">اختبر نفسك</span></a>
+      <a href="#contact" class="nav-cta"><span class="en-only">Contact</span><span class="ar-only">تواصل</span></a>
+      <button class="lang-btn" onclick="toggleLang()">
+        🌐 <span class="en-only">العربية</span><span class="ar-only">English</span>
+      </button>
+    </div>
+    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="badge">
+        <span class="pulse"></span>
+        <span class="en-only">Now accepting new students</span>
+        <span class="ar-only">أماكن متاحة للطلاب الجدد</span>
+      </span>
+      <h1 class="en-only">Hi, I'm <span class="grad">Engy Ibrahim</span> — making science <span class="grad">simple & fun</span>.</h1>
+      <h1 class="ar-only">مرحباً، أنا <span class="grad">إنچي إبراهيم</span> — أجعل العلوم <span class="grad">سهلةً وممتعة</span>.</h1>
+      <div class="role">
+        <span class="en-only">Science Teacher · Primary & Preparatory</span>
+        <span class="ar-only">مدرّسة علوم · ابتدائي وإعدادي</span>
+      </div>
+      <p class="tag en-only">My goal: no student ever feels that a topic is too hard. Every part of the curriculum becomes reachable — and we add games to every lesson so understanding meets fun, and boredom never wins.</p>
+      <p class="tag ar-only">هدفي أن لا يشعر الطالب أبداً بصعوبة أيٍّ من المواضيع، وأن يتمكّن من فهم كل جزء من المنهج مهما بدا عسيراً. ونُضيف إلى كل حصة ألعاباً تعليمية لدمج الفهم بالمتعة، فلا يجد الملل إلى التعلّم سبيلاً.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/201505947033" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.555-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+          <span class="en-only">Book a free trial</span>
+          <span class="ar-only">احجز حصة تجريبية</span>
+        </a>
+        <a href="#services" class="btn btn-ghost">
+          <span class="en-only">Explore services →</span>
+          <span class="ar-only">← تعرّف على الخدمات</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="photo science-art" aria-label="Science illustration">
+        <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+          <defs>
+            <linearGradient id="flask" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ff8fb1" stop-opacity=".85"/>
+              <stop offset="100%" stop-color="#ffd84d" stop-opacity=".9"/>
+            </linearGradient>
+            <linearGradient id="liquid" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#7ec8f2"/>
+              <stop offset="100%" stop-color="#ff8fb1"/>
+            </linearGradient>
+            <radialGradient id="bubble" cx=".3" cy=".3" r=".7">
+              <stop offset="0%" stop-color="#fff" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Atom -->
+          <g transform="translate(200 130)" stroke="#c4407a" stroke-width="2.5" fill="none" opacity=".85">
+            <g class="sa-atom-orbits">
+              <ellipse cx="0" cy="0" rx="78" ry="28"/>
+              <ellipse cx="0" cy="0" rx="78" ry="28" transform="rotate(60)"/>
+              <ellipse cx="0" cy="0" rx="78" ry="28" transform="rotate(-60)"/>
+              <circle class="sa-electron" cx="78" cy="0" r="5" fill="#7ec8f2" stroke="#3d2c5f"/>
+              <circle class="sa-electron e2" cx="-39" cy="-67" r="5" fill="#ff8fb1" stroke="#3d2c5f"/>
+              <circle class="sa-electron e3" cx="-39" cy="67" r="5" fill="#ffd84d" stroke="#3d2c5f"/>
+            </g>
+            <circle class="sa-nucleus" cx="0" cy="0" r="9" fill="#ffd84d" stroke="#c4407a"/>
+          </g>
+
+          <!-- Energy sparks around atom -->
+          <g fill="#ffd84d" stroke="#c4407a" stroke-width="1.2">
+            <path class="sa-spark" d="M120 70 l3 -8 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 z"/>
+            <path class="sa-spark s2" d="M295 110 l2.5 -6 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 z" fill="#ff8fb1"/>
+            <path class="sa-spark s3" d="M205 30 l2 -5 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 z" fill="#7ec8f2"/>
+          </g>
+
+          <!-- Erlenmeyer flask -->
+          <g transform="translate(110 220)">
+            <path d="M30 0 H70 V40 L105 130 Q108 150 88 150 H12 Q-8 150 -5 130 L30 40 Z"
+                  fill="url(#flask)" stroke="#3d2c5f" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M-2 110 Q50 95 102 110 L88 150 Q108 150 88 150 H12 Q-8 150 -5 130 Z"
+                  fill="url(#liquid)" opacity=".9"/>
+            <circle class="sa-bubble" cx="35" cy="125" r="5" fill="url(#bubble)"/>
+            <circle class="sa-bubble b2" cx="60" cy="115" r="3.5" fill="url(#bubble)"/>
+            <circle class="sa-bubble b3" cx="75" cy="130" r="4" fill="url(#bubble)"/>
+            <rect x="28" y="-6" width="44" height="8" rx="3" fill="#3d2c5f"/>
+          </g>
+
+          <!-- Test tube -->
+          <g transform="translate(265 215) rotate(15)">
+            <rect x="0" y="0" width="34" height="135" rx="17" fill="#fff7ef" stroke="#3d2c5f" stroke-width="2.5"/>
+            <path d="M2 70 H32 V118 Q32 135 17 135 Q2 135 2 118 Z" fill="#7ec8f2" opacity=".85"/>
+            <rect x="-4" y="-6" width="42" height="10" rx="3" fill="#3d2c5f"/>
+            <circle class="sa-bubble b2" cx="14" cy="95" r="3" fill="url(#bubble)"/>
+            <circle class="sa-bubble b3" cx="22" cy="110" r="2.5" fill="url(#bubble)"/>
+          </g>
+
+          <!-- DNA strand -->
+          <g transform="translate(330 70)" stroke="#c4407a" stroke-width="2.5" fill="none" opacity=".7">
+            <path d="M0 0 Q20 25 0 50 Q-20 75 0 100"/>
+            <path d="M20 0 Q0 25 20 50 Q40 75 20 100"/>
+            <line x1="2" y1="12" x2="18" y2="12" stroke="#7ec8f2"/>
+            <line x1="2" y1="38" x2="18" y2="38" stroke="#ffd84d"/>
+            <line x1="2" y1="62" x2="18" y2="62" stroke="#ff8fb1"/>
+            <line x1="2" y1="88" x2="18" y2="88" stroke="#7ec8f2"/>
+          </g>
+
+          <!-- Formula tags -->
+          <text x="55" y="60" font-family="Poppins,sans-serif" font-size="22" font-weight="700" fill="#c4407a" opacity=".75">H₂O</text>
+          <text x="60" y="395" font-family="Poppins,sans-serif" font-size="20" font-weight="700" fill="#7ec8f2" opacity=".9">CO₂</text>
+          <text x="290" y="380" font-family="Poppins,sans-serif" font-size="20" font-weight="700" fill="#c4407a" opacity=".8">E=mc²</text>
+        </svg>
+      </div>
+      <div class="float-chip chip-1"><div class="ico">EN</div> <span class="en-only">English Lessons</span><span class="ar-only">دروس بالإنجليزي</span></div>
+      <div class="float-chip chip-2"><div class="ico">ع</div> <span class="en-only">Arabic Lessons</span><span class="ar-only">دروس بالعربي</span></div>
+      <div class="float-chip chip-3"><div class="ico">🎮</div> <span class="en-only">Learn by Games</span><span class="ar-only">تعلّم باللعب</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow"><span class="en-only">About Me</span><span class="ar-only">عني</span></span>
+      <h2 class="section-title en-only">A passionate science educator.</h2>
+      <h2 class="section-title ar-only">معلّمة علوم شغوفة بتبسيط العلم.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="en-only">I'm Engy Ibrahim, an Egyptian science teacher for primary and preparatory students (Grades 1–9). I graduated from the Faculty of Education, Science department, and I teach in both Arabic and English. My philosophy is simple: <strong style="color:#c4407a">no student should ever feel a concept is too hard for them.</strong> I break the curriculum into clear, reachable pieces — and turn every part into a small game, so understanding and fun grow together and boredom never gets a chance.</p>
+        <p class="ar-only">أنا إنچي إبراهيم، مدرّسة علوم مصرية للمرحلتين الابتدائية والإعدادية (من الصف الأول حتى الثالث الإعدادي). خريجة كلية التربية – قسم العلوم، وبدرّس باللغتين العربية والإنجليزية. فلسفتي بسيطة: <strong style="color:#c4407a">لازم الطالب ما يحسش أبداً إن في حاجة صعبة.</strong> ببسّط المنهج لأجزاء صغيرة يقدر يوصل لها، وعلى كل جزء بنلعب لعبة صغيرة، علشان الفهم والمتعة يكبروا مع بعض والملل ما يلاقيش مكان.</p>
+      </div>
+      <div class="reveal">
+        <div class="card" style="margin:0">
+          <h3 class="en-only">Education & Credentials</h3>
+          <h3 class="ar-only">المؤهلات العلمية</h3>
+          <ul>
+            <li class="en-only">🎓 B.Ed. — Faculty of Education, Science Department</li>
+            <li class="ar-only">🎓 بكالوريوس تربية – قسم العلوم (Science)</li>
+            <li class="en-only">🧪 Specialized in Biology, Chemistry & Physics fundamentals</li>
+            <li class="ar-only">🧪 تخصص في أساسيات الأحياء والكيمياء والفيزياء</li>
+            <li class="en-only">🌍 Bilingual instruction: Arabic & English</li>
+            <li class="ar-only">🌍 التدريس بلغتين: عربي وإنجليزي</li>
+            <li class="en-only">🎮 Game-based teaching for every lesson</li>
+            <li class="ar-only">🎮 تعليم قائم على الألعاب في كل درس</li>
+          </ul>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>5+</b><span class="en-only">Years Teaching</span><span class="ar-only">سنوات خبرة</span></div>
+          <div class="stat"><b>100+</b><span class="en-only">Students</span><span class="ar-only">طالب وطالبة</span></div>
+          <div class="stat"><b>2</b><span class="en-only">Languages</span><span class="ar-only">لغتين</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:40px">
+      <span class="eyebrow"><span class="en-only">What I Offer</span><span class="ar-only">الخدمات</span></span>
+      <h2 class="section-title en-only">Services tailored to every learner.</h2>
+      <h2 class="section-title ar-only">خدمات مصمّمة لكل طالب.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="icon">🔬</div>
+        <h3 class="en-only">Primary Science (Grades 1–6)</h3>
+        <h3 class="ar-only">علوم المرحلة الابتدائية</h3>
+        <p class="en-only">Foundational science with experiments, visuals, and storytelling that turn lessons into small adventures.</p>
+        <p class="ar-only">تأسيس قوي في العلوم مع تجارب وأنشطة بصرية تخلّي الحصة مغامرة صغيرة.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">⚗️</div>
+        <h3 class="en-only">Prep Science (Grades 7–9)</h3>
+        <h3 class="ar-only">علوم المرحلة الإعدادية</h3>
+        <p class="en-only">Deeper biology, chemistry & physics — with exam preparation and full concept mastery.</p>
+        <p class="ar-only">شرح متعمّق للأحياء والكيمياء والفيزياء مع تدريب على الامتحانات وفهم كامل للدروس.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🌐</div>
+        <h3 class="en-only">Bilingual Lessons</h3>
+        <h3 class="ar-only">دروس بلغتين</h3>
+        <p class="en-only">Arabic, English, or a mix — perfect for national, language, and international school students.</p>
+        <p class="ar-only">باختيارك: عربي أو إنجليزي أو الاتنين — يناسب طلاب الحكومي واللغات والـ International.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🎮</div>
+        <h3 class="en-only">Learn-by-Games</h3>
+        <h3 class="ar-only">تعلّم باللعب</h3>
+        <p class="en-only">Every concept comes with a mini-game — so understanding sticks and the lesson never feels boring.</p>
+        <p class="ar-only">كل جزء من الدرس بيتربط بلعبة صغيرة — الفهم بيرسخ والحصة ما تبقاش مملة أبداً.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">💻</div>
+        <h3 class="en-only">Online Sessions</h3>
+        <h3 class="ar-only">دروس أونلاين</h3>
+        <p class="en-only">Interactive online classes (Zoom / Google Meet) — same quality, from anywhere in the world.</p>
+        <p class="ar-only">حصص أونلاين تفاعلية (Zoom / Google Meet) — نفس الجودة، من أي مكان.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🏠</div>
+        <h3 class="en-only">In-person Lessons</h3>
+        <h3 class="ar-only">دروس أوفلاين</h3>
+        <p class="en-only">One-on-one or small groups, designed around your child's pace, strengths, and learning goals.</p>
+        <p class="ar-only">حصص فردية أو مجموعات صغيرة، مصمّمة حسب مستوى الطفل وقدراته وأهدافه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:30px">
+      <span class="eyebrow"><span class="en-only">Experience</span><span class="ar-only">الخبرة</span></span>
+      <h2 class="section-title en-only">A teaching journey built on trust.</h2>
+      <h2 class="section-title ar-only">رحلة تدريس مبنيّة على الثقة.</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="when"><span class="en-only">Last 2 years · Online</span><span class="ar-only">آخر سنتين · أونلاين</span></div>
+        <h4 class="en-only">Online Science Teacher</h4>
+        <h4 class="ar-only">مدرّسة علوم أونلاين</h4>
+        <p class="en-only">2 years of online teaching — individual sessions and small groups via Zoom & Google Meet, in Arabic and English.</p>
+        <p class="ar-only">سنتين تدريس أونلاين — حصص فردية ومجموعات صغيرة عبر Zoom و Google Meet، بالعربي والإنجليزي.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when"><span class="en-only">3 years · Offline</span><span class="ar-only">٣ سنوات · أوفلاين</span></div>
+        <h4 class="en-only">In-person Science Teacher</h4>
+        <h4 class="ar-only">مدرّسة علوم أوفلاين</h4>
+        <p class="en-only">3 years of in-person teaching with primary and prep students, building strong foundations and exam confidence.</p>
+        <p class="ar-only">٣ سنوات تدريس مباشر لطلاب الابتدائي والإعدادي، بتأسيس قوي وثقة كاملة في الامتحانات.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when"><span class="en-only">100+ Students</span><span class="ar-only">+١٠٠ طالب</span></div>
+        <h4 class="en-only">Trusted by parents & students</h4>
+        <h4 class="ar-only">ثقة من الأهالي والطلاب</h4>
+        <p class="en-only">Around 100 students have learned with me — with consistent improvement in grades and a real love for science.</p>
+        <p class="ar-only">حوالي ١٠٠ طالب وطالبة درسوا معايا، بتحسّن واضح في الدرجات وحب حقيقي للمادة.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when"><span class="en-only">Education</span><span class="ar-only">التعليم</span></div>
+        <h4 class="en-only">Faculty of Education — Science Department</h4>
+        <h4 class="ar-only">كلية التربية – قسم العلوم</h4>
+        <p class="en-only">Bachelor's degree with a strong foundation in pedagogy, child psychology, and the three core sciences.</p>
+        <p class="ar-only">بكالوريوس مع تأسيس قوي في طرق التدريس وعلم نفس الطفل والعلوم الثلاثة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:40px">
+      <span class="eyebrow"><span class="en-only">Why Choose Me</span><span class="ar-only">لماذا تختارني</span></span>
+      <h2 class="section-title en-only">More than a teacher — a learning partner.</h2>
+      <h2 class="section-title ar-only">مش بس مدرّسة — شريكة تعلّم.</h2>
+    </div>
+    <div class="grid why-grid">
+      <div class="card reveal">
+        <div class="icon">🧩</div>
+        <h3 class="en-only">Nothing is "too hard"</h3>
+        <h3 class="ar-only">ما فيش حاجة صعبة</h3>
+        <p class="en-only">I break every topic into reachable steps — so the student feels capable, not overwhelmed.</p>
+        <p class="ar-only">ببسّط أي درس لخطوات صغيرة يقدر يوصلها — الطالب يحسّ إنه قادر، مش متضايق.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🎮</div>
+        <h3 class="en-only">Learning through Games</h3>
+        <h3 class="ar-only">تعلّم بالألعاب</h3>
+        <p class="en-only">Every part of the lesson has its own game — understanding plus fun, with zero boredom.</p>
+        <p class="ar-only">كل جزء من الدرس له لعبته — فهم ومتعة، من غير أي ملل.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🌍</div>
+        <h3 class="en-only">Truly Bilingual</h3>
+        <h3 class="ar-only">ثنائية اللغة فعلياً</h3>
+        <p class="en-only">I teach the exact same concept fluently in Arabic and English — perfect for language & international schools.</p>
+        <p class="ar-only">بشرح نفس المفهوم بطلاقة بالعربي أو الإنجليزي — مثالي لمدارس اللغات والـ International.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">📚</div>
+        <h3 class="en-only">5 Years of Experience</h3>
+        <h3 class="ar-only">٥ سنوات خبرة</h3>
+        <p class="en-only">3 years offline + 2 years online with ~100 students — proven results in grades and confidence.</p>
+        <p class="ar-only">٣ سنوات أوفلاين + سنتين أونلاين مع حوالي ١٠٠ طالب — نتائج حقيقية في الدرجات والثقة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- QUIZ SECTION -->
+<section id="quiz">
+  <div class="container">
+    <div class="quiz-wrap reveal">
+      <div style="text-align:center;margin-bottom:40px">
+        <span class="eyebrow"><span class="en-only">Interactive Quiz</span><span class="ar-only">اختبار تفاعلي</span></span>
+        <h2 class="section-title en-only">Test Your Science Knowledge 🧪</h2>
+        <h2 class="section-title ar-only">اختبر معلوماتك العلمية 🧪</h2>
+        <p style="color:var(--muted);max-width:520px;margin:0 auto" class="en-only">A sample of the kind of fun, engaging quizzes I use in my lessons. Choose a topic and give it a go!</p>
+        <p style="color:var(--muted);max-width:520px;margin:0 auto" class="ar-only">نموذج من الاختبارات الممتعة اللي بستخدمها في حصصي. اختار موضوع وجرّب!</p>
+      </div>
+
+      <div class="quiz-tabs" id="quizTabs">
+        <button class="qtab active" onclick="loadQuiz('matter')" data-topic="matter">
+          <span class="en-only">⚗️ Matter & States</span><span class="ar-only">⚗️ المادة وحالاتها</span>
+        </button>
+        <button class="qtab" onclick="loadQuiz('living')" data-topic="living">
+          <span class="en-only">🌿 Living Things</span><span class="ar-only">🌿 الكائنات الحية</span>
+        </button>
+        <button class="qtab" onclick="loadQuiz('energy')" data-topic="energy">
+          <span class="en-only">⚡ Energy & Forces</span><span class="ar-only">⚡ الطاقة والقوى</span>
+        </button>
+      </div>
+
+      <div class="quiz-card" id="quizCard">
+        <!-- progress -->
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill" style="width:0%"></div></div>
+        <!-- meta -->
+        <div class="quiz-meta">
+          <span class="quiz-num" id="quizNum"></span>
+          <span class="quiz-score-badge" id="quizScoreBadge">⭐ 0</span>
+        </div>
+        <!-- question -->
+        <div class="quiz-q" id="quizQ"></div>
+        <!-- options -->
+        <div class="quiz-opts" id="quizOpts"></div>
+        <!-- feedback -->
+        <div class="quiz-feedback" id="quizFeedback"></div>
+        <!-- next -->
+        <div class="quiz-actions">
+          <button class="quiz-next" id="quizNext" onclick="nextQuestion()">
+            <span class="en-only">Next →</span><span class="ar-only">→ التالي</span>
+          </button>
+        </div>
+        <!-- result screen -->
+        <div class="quiz-result" id="quizResult">
+          <div class="big-emoji" id="resultEmoji">🏆</div>
+          <div class="result-score" id="resultScore"></div>
+          <h3 class="en-only" id="resultTitleEn"></h3>
+          <h3 class="ar-only" id="resultTitleAr"></h3>
+          <p class="en-only" id="resultMsgEn"></p>
+          <p class="ar-only" id="resultMsgAr"></p>
+          <button class="quiz-restart" onclick="restartQuiz()">
+            <span class="en-only">🔄 Try Again</span><span class="ar-only">🔄 حاول مجدداً</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const quizData = {
+  matter: [
+    {
+      en: "What is the chemical formula for water?",
+      ar: "ما هي الصيغة الكيميائية للماء؟",
+      opts: {en:["H₂O","CO₂","NaCl","O₂"], ar:["H₂O","CO₂","NaCl","O₂"]},
+      answer: 0,
+      exp: {en:"Water is made of 2 hydrogen atoms and 1 oxygen atom — H₂O!", ar:"الماء مكوّن من ذرتين هيدروجين وذرة أكسجين — H₂O!"}
+    },
+    {
+      en: "When ice melts, it changes from a solid to a ___?",
+      ar: "عندما يذوب الجليد، يتحول من صلب إلى ___؟",
+      opts: {en:["Gas","Liquid","Plasma","Vapor"], ar:["غاز","سائل","بلازما","بخار"]},
+      answer: 1,
+      exp: {en:"Melting turns solid ice into liquid water. The molecules start moving more freely!", ar:"الذوبان يحوّل الجليد الصلب إلى ماء سائل. الجزيئات تبدأ تتحرك بحرية أكبر!"}
+    },
+    {
+      en: "Which gas do we breathe in to survive?",
+      ar: "أي غاز نتنفسه للبقاء على قيد الحياة؟",
+      opts: {en:["Carbon Dioxide","Nitrogen","Oxygen","Hydrogen"], ar:["ثاني أكسيد الكربون","نيتروجين","أكسجين","هيدروجين"]},
+      answer: 2,
+      exp: {en:"We breathe in Oxygen (O₂) — it powers every cell in our body!", ar:"نتنفس الأكسجين (O₂) — يعطي الطاقة لكل خلية في جسمنا!"}
+    },
+    {
+      en: "Salt dissolving in water is an example of a ___?",
+      ar: "ذوبان الملح في الماء مثال على ___؟",
+      opts: {en:["Chemical change","Physical change","Combustion","Evaporation"], ar:["تغيير كيميائي","تغيير فيزيائي","احتراق","تبخر"]},
+      answer: 1,
+      exp: {en:"It's a physical change — no new substance is formed, and you can get the salt back by evaporating the water!", ar:"تغيير فيزيائي — لا تتكون مادة جديدة، وتقدر تسترجع الملح بتبخير الماء!"}
+    },
+    {
+      en: "What is the smallest unit of matter?",
+      ar: "ما هي أصغر وحدة في المادة؟",
+      opts: {en:["Molecule","Cell","Atom","Electron"], ar:["جزيء","خلية","ذرة","إلكترون"]},
+      answer: 2,
+      exp: {en:"The atom is the basic building block of all matter. Everything around you is made of atoms!", ar:"الذرة هي اللبنة الأساسية لكل المادة. كل شيء حولك مكوّن من ذرات!"}
+    }
+  ],
+  living: [
+    {
+      en: "What process do plants use to make their own food?",
+      ar: "ما العملية التي تستخدمها النباتات لصنع غذائها؟",
+      opts: {en:["Respiration","Photosynthesis","Digestion","Transpiration"], ar:["التنفس","البناء الضوئي","الهضم","النتح"]},
+      answer: 1,
+      exp: {en:"Photosynthesis uses sunlight, CO₂ and water to make glucose — the plant's food!", ar:"البناء الضوئي يستخدم ضوء الشمس وثاني أكسيد الكربون والماء لصنع الجلوكوز — غذاء النبات!"}
+    },
+    {
+      en: "Which organ pumps blood around the body?",
+      ar: "أي عضو يضخ الدم في الجسم؟",
+      opts: {en:["Lungs","Brain","Liver","Heart"], ar:["الرئتان","المخ","الكبد","القلب"]},
+      answer: 3,
+      exp: {en:"The heart is a powerful muscle that beats about 100,000 times a day to pump blood!", ar:"القلب عضلة قوية تنبض حوالي 100,000 مرة يومياً لضخ الدم!"}
+    },
+    {
+      en: "What do we call organisms that eat only plants?",
+      ar: "ما اسم الكائنات التي تأكل النباتات فقط؟",
+      opts: {en:["Carnivores","Omnivores","Herbivores","Decomposers"], ar:["آكلات لحوم","آكلات كل شيء","آكلات نباتات","محللات"]},
+      answer: 2,
+      exp: {en:"Herbivores eat only plants. Cows, rabbits, and giraffes are all herbivores!", ar:"الحيوانات العاشبة تأكل النباتات فقط. الأبقار والأرانب والزرافات كلها عاشبة!"}
+    },
+    {
+      en: "How many chambers does the human heart have?",
+      ar: "كم عدد غرف القلب البشري؟",
+      opts: {en:["2","3","4","6"], ar:["2","3","4","6"]},
+      answer: 2,
+      exp: {en:"The human heart has 4 chambers: right atrium, right ventricle, left atrium, and left ventricle!", ar:"للقلب البشري 4 غرف: الأذين الأيمن، البطين الأيمن، الأذين الأيسر، والبطين الأيسر!"}
+    },
+    {
+      en: "Which part of the plant absorbs water from the soil?",
+      ar: "أي جزء من النبات يمتص الماء من التربة؟",
+      opts: {en:["Leaves","Stem","Flower","Roots"], ar:["الأوراق","الساق","الزهرة","الجذور"]},
+      answer: 3,
+      exp: {en:"Roots absorb water and minerals from the soil and carry them up through the stem to the leaves!", ar:"الجذور تمتص الماء والمعادن من التربة وترفعها عبر الساق إلى الأوراق!"}
+    }
+  ],
+  energy: [
+    {
+      en: "What is the formula for Einstein's famous equation?",
+      ar: "ما هي معادلة أينشتاين الشهيرة؟",
+      opts: {en:["F=ma","E=mc²","P=mv","V=IR"], ar:["F=ma","E=mc²","P=mv","V=IR"]},
+      answer: 1,
+      exp: {en:"E=mc² shows that energy and mass are equivalent, where c is the speed of light!", ar:"E=mc² تُظهر أن الطاقة والكتلة متكافئتان، حيث c هي سرعة الضوء!"}
+    },
+    {
+      en: "Which type of energy does a moving ball have?",
+      ar: "أي نوع من الطاقة تمتلكها الكرة المتحركة؟",
+      opts: {en:["Potential energy","Chemical energy","Kinetic energy","Nuclear energy"], ar:["طاقة كامنة","طاقة كيميائية","طاقة حركية","طاقة نووية"]},
+      answer: 2,
+      exp: {en:"Kinetic energy is the energy of motion. The faster the ball moves, the more kinetic energy it has!", ar:"الطاقة الحركية هي طاقة الحركة. كلما تحركت الكرة أسرع، كلما امتلكت طاقة حركية أكبر!"}
+    },
+    {
+      en: "What force pulls objects toward the Earth?",
+      ar: "ما القوة التي تجذب الأشياء نحو الأرض؟",
+      opts: {en:["Magnetism","Friction","Gravity","Electricity"], ar:["المغناطيسية","الاحتكاك","الجاذبية","الكهرباء"]},
+      answer: 2,
+      exp: {en:"Gravity is the force that pulls objects toward Earth. It keeps us on the ground and the Moon in orbit!", ar:"الجاذبية هي القوة التي تجذب الأشياء نحو الأرض. تُبقينا على الأرض والقمر في مداره!"}
+    },
+    {
+      en: "A book sitting on a shelf has which type of energy?",
+      ar: "الكتاب الجالس على الرف يمتلك أي نوع من الطاقة؟",
+      opts: {en:["Kinetic energy","Sound energy","Potential energy","Light energy"], ar:["طاقة حركية","طاقة صوتية","طاقة كامنة","طاقة ضوئية"]},
+      answer: 2,
+      exp: {en:"A book on a shelf has gravitational potential energy — stored energy due to its height. If it falls, that converts to kinetic energy!", ar:"الكتاب على الرف يمتلك طاقة وضع جاذبية — طاقة مخزنة بسبب ارتفاعه. إذا سقط، تتحول لطاقة حركية!"}
+    },
+    {
+      en: "Light travels at approximately ___ km per second?",
+      ar: "تسافر الضوء بسرعة حوالي ___ كم في الثانية؟",
+      opts: {en:["100,000","300,000","1,000,000","150,000"], ar:["100,000","300,000","1,000,000","150,000"]},
+      answer: 1,
+      exp: {en:"Light travels at ~300,000 km/s — it can circle the Earth 7.5 times in just one second!", ar:"الضوء يسافر بسرعة ~300,000 كم/ث — يمكنه إطاف بالأرض 7.5 مرة في ثانية واحدة!"}
+    }
+  ]
+};
+
+let currentTopic = 'matter';
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+function loadQuiz(topic) {
+  currentTopic = topic;
+  currentQ = 0;
+  score = 0;
+  answered = false;
+  document.querySelectorAll('.qtab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`[data-topic="${topic}"]`).classList.add('active');
+  document.getElementById('quizResult').style.display = 'none';
+  renderQuestion();
+}
+
+function isAr() {
+  return document.body.classList.contains('lang-ar');
+}
+
+function renderQuestion() {
+  const qs = quizData[currentTopic];
+  const q = qs[currentQ];
+  const lang = isAr() ? 'ar' : 'en';
+  const total = qs.length;
+
+  document.getElementById('quizFill').style.width = (currentQ / total * 100) + '%';
+  document.getElementById('quizNum').textContent = isAr()
+    ? `سؤال ${currentQ + 1} من ${total}`
+    : `Question ${currentQ + 1} of ${total}`;
+  document.getElementById('quizScoreBadge').textContent = '⭐ ' + score;
+  document.getElementById('quizQ').textContent = q[lang];
+
+  const optsEl = document.getElementById('quizOpts');
+  optsEl.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts[lang].forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qopt';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = () => selectAnswer(i, btn);
+    optsEl.appendChild(btn);
+  });
+
+  const fb = document.getElementById('quizFeedback');
+  fb.className = 'quiz-feedback';
+  fb.textContent = '';
+  document.getElementById('quizNext').style.display = 'none';
+  answered = false;
+}
+
+function selectAnswer(idx, btn) {
+  if (answered) return;
+  answered = true;
+  const q = quizData[currentTopic][currentQ];
+  const lang = isAr() ? 'ar' : 'en';
+  const opts = document.querySelectorAll('.qopt');
+
+  opts.forEach((o, i) => {
+    o.disabled = true;
+    if (i === q.answer) o.classList.add('reveal');
+  });
+
+  const fb = document.getElementById('quizFeedback');
+  if (idx === q.answer) {
+    score++;
+    btn.classList.add('correct');
+    fb.className = 'quiz-feedback ok show';
+    fb.textContent = (isAr() ? '✅ ممتاز! ' : '✅ Correct! ') + q.exp[lang];
+  } else {
+    btn.classList.add('wrong');
+    fb.className = 'quiz-feedback bad show';
+    fb.textContent = (isAr() ? '❌ إجابة خاطئة. ' : '❌ Not quite. ') + q.exp[lang];
+  }
+  document.getElementById('quizScoreBadge').textContent = '⭐ ' + score;
+
+  const nextBtn = document.getElementById('quizNext');
+  const qs = quizData[currentTopic];
+  nextBtn.style.display = 'inline-flex';
+  if (currentQ >= qs.length - 1) {
+    nextBtn.innerHTML = isAr() ? '🏁 النتيجة' : '🏁 See Results';
+  } else {
+    nextBtn.innerHTML = isAr() ? '→ التالي' : 'Next →';
+  }
+}
+
+function nextQuestion() {
+  const qs = quizData[currentTopic];
+  currentQ++;
+  if (currentQ >= qs.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showResult() {
+  const total = quizData[currentTopic].length;
+  const pct = Math.round(score / total * 100);
+  document.getElementById('quizFill').style.width = '100%';
+  document.getElementById('quizOpts').innerHTML = '';
+  document.getElementById('quizQ').textContent = '';
+  document.getElementById('quizFeedback').className = 'quiz-feedback';
+  document.getElementById('quizNext').style.display = 'none';
+  document.getElementById('quizNum').textContent = '';
+
+  let emoji = pct === 100 ? '🏆' : pct >= 60 ? '🌟' : '💪';
+  let titleEn = pct === 100 ? 'Perfect Score!' : pct >= 60 ? 'Great Job!' : 'Keep Practicing!';
+  let titleAr = pct === 100 ? 'علامة كاملة!' : pct >= 60 ? 'عمل رائع!' : 'استمر في التدريب!';
+  let msgEn = pct === 100
+    ? "You got every question right — you're a science star! 🌟"
+    : pct >= 60
+    ? `You scored ${score} out of ${total}. Solid effort — try again to get them all!`
+    : `You scored ${score} out of ${total}. Science takes practice — keep going!`;
+  let msgAr = pct === 100
+    ? 'أجبت على كل الأسئلة صح — أنت نجم العلوم! 🌟'
+    : pct >= 60
+    ? `حصلت على ${score} من ${total}. جهد ممتاز — حاول مجدداً!`
+    : `حصلت على ${score} من ${total}. العلوم تحتاج تدريب — استمر!`;
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultScore').textContent = `${score} / ${total}`;
+  document.getElementById('resultTitleEn').textContent = titleEn;
+  document.getElementById('resultTitleAr').textContent = titleAr;
+  document.getElementById('resultMsgEn').textContent = msgEn;
+  document.getElementById('resultMsgAr').textContent = msgAr;
+  document.getElementById('quizResult').style.display = 'block';
+}
+
+function restartQuiz() {
+  loadQuiz(currentTopic);
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', function(){
+  loadQuiz('matter');
+});
+</script>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div>
+        <span class="eyebrow"><span class="en-only">Get in touch</span><span class="ar-only">تواصل معي</span></span>
+        <h2 class="en-only">Let's build your child's love for science.</h2>
+        <h2 class="ar-only">لنبني معاً حبَّ طفلك للعلوم.</h2>
+        <p style="color:var(--muted);max-width:480px;margin-top:14px" class="en-only">Message me on WhatsApp or call for the fastest response.</p>
+        <p style="color:var(--muted);max-width:480px;margin-top:14px" class="ar-only">تواصلي معي عبر واتساب أو الهاتف للحصول على أسرع ردٍّ ممكن.</p>
+        <div class="socials">
+          <a href="https://wa.me/201505947033" aria-label="WhatsApp" title="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.555-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-list">
+          <a class="c-item" href="https://wa.me/201505947033">
+            <div class="ic">W</div>
+            <div><small>WhatsApp</small><b>+20 150 594 7033</b></div>
+          </a>
+          <a class="c-item" href="tel:+201505947033">
+            <div class="ic">☎</div>
+            <div><small><span class="en-only">Phone</span><span class="ar-only">هاتف</span></small><b>+20 150 594 7033</b></div>
+          </a>
+          <a class="c-item" href="#">
+            <div class="ic">📍</div>
+            <div><small><span class="en-only">Location</span><span class="ar-only">الموقع</span></small><b><span class="en-only">Cairo, Egypt</span><span class="ar-only">القاهرة، مصر</span></b></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span>
+  <span class="en-only">Engy Ibrahim · Science Teacher — Made with 💙 for curious minds.</span>
+  <span class="ar-only">إنچي إبراهيم · مدرّسة علوم — صُنع بحب 💙 للعقول الفضولية.</span>
+</footer>
+
+<!-- Floating language toggle -->
+<button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+  🌐 <span class="en-only">العربية</span><span class="ar-only">English</span>
+</button>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/201000000000" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.555-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.298.298-.496.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.521.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+  // Language toggle
+  function setLang(lang){
+    document.body.classList.remove('lang-en','lang-ar');
+    document.body.classList.add('lang-'+lang);
+    document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+  }
+  function toggleLang(){
+    const next = document.body.classList.contains('lang-en') ? 'ar' : 'en';
+    setLang(next);
+  }
+  try{
+    const saved = localStorage.getItem('lang');
+    if(saved) setLang(saved);
+  }catch(e){}
+
+  // Stars
+  const stars = document.getElementById('stars');
+  for(let i=0;i<60;i++){
+    const s=document.createElement('span');
+    s.style.top=Math.random()*100+'%';
+    s.style.left=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    s.style.opacity=(Math.random()*.7+.2);
+    stars.appendChild(s);
+  }
+
+  // Chemistry symbols
+  const chemLayer = document.getElementById('chemLayer');
+  const formulas = [
+    'H<sub>2</sub>O','CO<sub>2</sub>','O<sub>2</sub>','NaCl','CH<sub>4</sub>',
+    'H<sub>2</sub>SO<sub>4</sub>','NH<sub>3</sub>','C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>',
+    'HCl','Fe','Au','Ag','Cu','Mg','Ca','N<sub>2</sub>','O<sub>3</sub>',
+    'C<sub>2</sub>H<sub>5</sub>OH','KOH','NaOH','π','Δ','λ','E=mc<sup>2</sup>',
+    'pH','+','−','⚛','🧪','🔬',
+    'Na','K','Cl','P','S','Zn','Al','Si','H<sub>2</sub>','F<sub>2</sub>',
+    'CaCO<sub>3</sub>','MgO','H<sub>2</sub>O<sub>2</sub>','C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>',
+    'Fe<sub>2</sub>O<sub>3</sub>','HNO<sub>3</sub>','SO<sub>2</sub>','NO<sub>2</sub>',
+    'PH<sub>3</sub>','BaCl<sub>2</sub>','AlCl<sub>3</sub>','ZnSO<sub>4</sub>',
+    'ΔH','ΔG','mol','M','atm','⚗️','🧬','🔭','Ω','α','β','γ',
+    'C<sub>6</sub>H<sub>6</sub>','CH<sub>3</sub>OH','COOH','NH<sub>4</sub>Cl',
+    'KMnO<sub>4</sub>','CuSO<sub>4</sub>','AgNO<sub>3</sub>','Na<sub>2</sub>CO<sub>3</sub>'
+  ];
+  const pageH = Math.max(document.body.scrollHeight, window.innerHeight);
+  const count = Math.floor(pageH / 60);
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    el.className = 'chem';
+    el.innerHTML = formulas[Math.floor(Math.random()*formulas.length)];
+    const size = 14 + Math.random()*48;
+    el.style.fontSize = size + 'px';
+    el.style.top = (Math.random()*pageH) + 'px';
+    el.style.left = (Math.random()*100) + '%';
+    const rot = (Math.random()*40 - 20);
+    const op = 0.18 + Math.random()*0.28;
+    el.style.setProperty('--r', rot + 'deg');
+    el.style.setProperty('--o', op);
+    el.style.opacity = op;
+    el.style.transform = `rotate(${rot}deg)`;
+    el.style.animationDelay = (Math.random()*8) + 's';
+    el.style.animationDuration = (12 + Math.random()*16) + 's';
+    chemLayer.appendChild(el);
+  }
+  for(let i=0;i<12;i++){
+    const h = document.createElement('div');
+    h.className = 'hex';
+    h.style.top = (Math.random()*pageH) + 'px';
+    h.style.left = (Math.random()*95) + '%';
+    h.style.transform = `scale(${0.6 + Math.random()*1.1})`;
+    h.style.animationDelay = (Math.random()*6) + 's';
+    chemLayer.appendChild(h);
+  }
+
+  // Year + reveal
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>
